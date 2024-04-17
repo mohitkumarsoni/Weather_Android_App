@@ -127,6 +127,7 @@
                 android:id="@+id/username_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/matte_black"
                 android:background="@drawable/edittext_bg"
                 android:inputType="text"
                 android:padding="8dp" />
@@ -145,6 +146,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edittext_bg"
+                android:textColor="@color/matte_black"
                 android:enabled="false"
                 android:inputType="text"
                 android:padding="8dp" />
@@ -175,6 +177,7 @@
                 android:focusable="false"
                 android:inputType="text"
                 android:padding="8dp"
+                android:textColor="@color/matte_black"
                 android:text="+91"
                 android:textStyle="bold" />
 
@@ -185,6 +188,7 @@
                 android:layout_marginStart="16sp"
                 android:layout_weight="5"
                 android:background="@drawable/edittext_bg"
+                android:textColor="@color/matte_black"
                 android:inputType="phone"
                 android:padding="8dp" />
         </LinearLayout>
