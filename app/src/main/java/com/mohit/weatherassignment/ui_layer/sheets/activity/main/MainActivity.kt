@@ -2,6 +2,7 @@ package com.mohit.weatherassignment.ui_layer.sheets.activity.main
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.mohit.weatherassignment.data.remote.repository.WeatherRepo
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(binding.root)
         val factory = MainViewModelFactory(application, WeatherRepo())
         viewModel = ViewModelProvider(this@MainActivity, factory)[MainVM::class.java]

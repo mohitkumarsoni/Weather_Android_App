@@ -31,6 +31,7 @@ class SignUpActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(binding.root)
         viewModel = ViewModelProvider(this)[SignupVM::class.java]
         email = intent.getStringExtra("email").toString()

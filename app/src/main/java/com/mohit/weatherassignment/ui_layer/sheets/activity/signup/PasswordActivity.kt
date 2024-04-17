@@ -16,6 +16,7 @@ class PasswordActivity : AppCompatActivity() {
     private lateinit var email:String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(binding.root)
 
         email = intent.getStringExtra("email").toString()
