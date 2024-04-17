@@ -34,9 +34,6 @@ class ProfileVM(application:Application) : AndroidViewModel(application) {
             }
         }
         binding.citySpinner.setSelection(index)
-        shortToast(context, index.toString())
-        binding.usernameEt.setText(username.toString())
-        binding.phoneEt.setText(phone.toString())
         binding.emailEt.setText(F_AUTH.currentUser?.email)
     }
 
