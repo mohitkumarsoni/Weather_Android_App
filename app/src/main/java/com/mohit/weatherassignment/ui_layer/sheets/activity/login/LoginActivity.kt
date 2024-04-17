@@ -4,20 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
-import com.google.firebase.auth.FirebaseAuth
-import com.mohit.weatherassignment.R
-import com.mohit.weatherassignment.data.firebase.F_AUTH
 import com.mohit.weatherassignment.databinding.ActivityLoginBinding
-import com.mohit.weatherassignment.databinding.ActivityMainBinding
-import com.mohit.weatherassignment.shortToast
 import com.mohit.weatherassignment.ui_layer.sheets.activity.forgot_password.ForgotPasswordActivity
 import com.mohit.weatherassignment.ui_layer.sheets.activity.main.MainActivity
-import com.mohit.weatherassignment.ui_layer.sheets.activity.signup.SignUpActivity
-import com.mohit.weatherassignment.ui_layer.sheets.activity.signup.UsernameActivity
 
 class LoginActivity : AppCompatActivity() {
     private val binding by lazy {

@@ -8,14 +8,8 @@ import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.ArrayAdapter
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
-import com.mohit.weatherassignment.R
-import com.mohit.weatherassignment.data.firebase.F_AUTH
 import com.mohit.weatherassignment.databinding.ActivitySignUpBinding
-import com.mohit.weatherassignment.shortToast
 import com.mohit.weatherassignment.ui_layer.sheets.activity.main.MainActivity
 
 class SignUpActivity : AppCompatActivity() {
