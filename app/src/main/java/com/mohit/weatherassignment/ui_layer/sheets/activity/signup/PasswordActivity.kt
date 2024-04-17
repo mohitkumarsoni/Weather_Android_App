@@ -30,7 +30,7 @@ class PasswordActivity : AppCompatActivity() {
 
             setPassBtn.setOnClickListener {
                 val pass = passwordEt.text.toString().trim()
-                val confirmPass = passwordEt.text.toString().trim()
+                val confirmPass = confirmPassEt.text.toString().trim()
 
                 validateAndSetPassword(email, pass, confirmPass)
 
@@ -39,9 +39,15 @@ class PasswordActivity : AppCompatActivity() {
     }
 
     private fun validateAndSetPassword(email:String, pas:String, confPas:String){
-        if (pas == confPas){
-            startActivity(Intent(this, SignUpActivity::class.java).putExtra("email",email).putExtra("password",pas))
-        }else binding.confirmPassEt.error = "password doesn't match"
+        if (pas.isNotEmpty()){
+            if (confPas.isNotEmpty()){
+                if (pas == confPas){
+                    startActivity(Intent(this, SignUpActivity::class.java).putExtra("email",email).putExtra("password",pas))
+                }else binding.confirmPassEt.error = "password doesn't match"
+            }else binding.confirmPassEt.error = "confirm password"
+        }else binding.passwordEt.error = "enter password"
+
+
     }
 
 }
