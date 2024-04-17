@@ -4,7 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
+import com.mohit.weatherassignment.R
 import com.mohit.weatherassignment.data.remote.repository.WeatherRepo
 import com.mohit.weatherassignment.databinding.ActivityMainBinding
 import com.mohit.weatherassignment.ui_layer.model.Weather
@@ -33,6 +36,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(binding.root)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
         val factory = MainViewModelFactory(application, WeatherRepo())
         viewModel = ViewModelProvider(this@MainActivity, factory)[MainVM::class.java]
         getWeatherLocation()
@@ -102,8 +110,8 @@ class MainActivity : AppCompatActivity() {
             day5.text = upcomingDays[5]
             day6.text = upcomingDays[6]
 
-            feelsLike1.text = "${it.main.feels_like}°"
-            feelsLike2.text = "${it.main.feels_like}°"
+            feelsLike1.text = kelvinToCelsius(it.main.feels_like)
+            feelsLike2.text = kelvinToCelsius(it.main.feels_like)
 
             humidity1.text = "${it.main.humidity}%"
             humidity2.text = "${it.main.humidity}%"

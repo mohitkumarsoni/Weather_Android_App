@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.util.Patterns
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import com.mohit.weatherassignment.R
 import com.mohit.weatherassignment.databinding.ActivityUsernameBinding
 
 
@@ -16,6 +19,11 @@ class UsernameActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(binding.root)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
 
         binding.nextBtn.setOnClickListener {
             val email = binding.emailEt.text.toString().trim()

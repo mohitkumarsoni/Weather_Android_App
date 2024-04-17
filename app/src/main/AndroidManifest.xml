@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WeatherAssignment"
         tools:targetApi="31">
+
         <activity
             android:name=".ui_layer.sheets.activity.forgot_password.ForgotPasswordActivity"
             android:exported="false" />
@@ -21,7 +22,7 @@
             android:exported="false" />
         <activity
             android:name=".ui_layer.sheets.activity.splash.SplashActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,13 +40,10 @@
             android:exported="false" />
         <activity
             android:name=".ui_layer.sheets.activity.login.LoginActivity"
-            android:exported="false" >
-
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".ui_layer.sheets.activity.main.MainActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
     </application>
 
 </manifest>

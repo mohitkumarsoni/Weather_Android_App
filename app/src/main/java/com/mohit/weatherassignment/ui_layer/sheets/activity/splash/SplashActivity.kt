@@ -6,6 +6,9 @@ import android.os.Handler
 import android.os.Looper
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import com.mohit.weatherassignment.R
 import com.mohit.weatherassignment.data.firebase.F_AUTH
 import com.mohit.weatherassignment.databinding.ActivitySplashBinding
 import com.mohit.weatherassignment.ui_layer.sheets.activity.login.LoginActivity
@@ -20,6 +23,11 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(binding.root)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
 
         val handler = Handler(Looper.getMainLooper())
         handler.postDelayed(Runnable {

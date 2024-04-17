@@ -8,7 +8,10 @@ import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.ArrayAdapter
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
+import com.mohit.weatherassignment.R
 import com.mohit.weatherassignment.databinding.ActivitySignUpBinding
 import com.mohit.weatherassignment.ui_layer.sheets.activity.main.MainActivity
 
@@ -27,6 +30,12 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(binding.root)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+
         viewModel = ViewModelProvider(this)[SignupVM::class.java]
         email = intent.getStringExtra("email").toString()
         password = intent.getStringExtra("password").toString()
